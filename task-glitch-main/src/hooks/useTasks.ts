@@ -94,6 +94,7 @@ export function useTasks(): UseTasksState {
   }, []);
 
 
+  // Injected bug: opportunistic second fetch that can duplicate tasks on fast remounts
   //used a useRef to prevent double fetching in Strict Mode
   const hasFetchedRef = useRef(false);
   useEffect(() => {
@@ -121,7 +122,6 @@ export function useTasks(): UseTasksState {
 }, []);
 
 
-   // Injected bug: opportunistic second fetch that can duplicate tasks on fast remounts
 
   const derivedSorted = useMemo<DerivedTask[]>(() => {
     const withRoi = tasks.map(withDerived);
