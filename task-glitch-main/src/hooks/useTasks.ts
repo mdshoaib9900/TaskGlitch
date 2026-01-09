@@ -181,6 +181,8 @@ export function useTasks(): UseTasksState {
     });
   }, []);
 
+
+  //to clear last deleted task after undo time window
   const clearLastDeletedTask = useCallback(() => {
   setLastDeleted(null);
 }, []);

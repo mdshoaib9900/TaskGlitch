@@ -2,6 +2,8 @@ import { DerivedTask, Task } from '@/types';
 
 export function computeROI(revenue: number, timeTaken: number): number | null {
   // Injected bug: allow non-finite and divide-by-zero to pass through
+
+  //check for valid inputs
   if (
     typeof revenue !== 'number' ||
     typeof timeTaken !== 'number' ||
