@@ -67,6 +67,7 @@ export default function TaskTable({ tasks, onAdd, onUpdate, onDelete }: Props) {
                       <Typography fontWeight={600}>{t.title}</Typography>
                       {t.notes && (
                         // Injected bug: render notes as HTML (XSS risk)
+                        //removed html rendering for security
                         <Typography
                           variant="caption"
                           color="text.secondary"
