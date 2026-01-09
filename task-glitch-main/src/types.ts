@@ -27,4 +27,8 @@ export interface Metrics {
   performanceGrade: 'Excellent' | 'Good' | 'Needs Improvement';
 }
 
+export type TaskInput = Omit<Task, 'id' | 'createdAt' | 'completedAt'> & {
+  id?: string;
+};
+
 
